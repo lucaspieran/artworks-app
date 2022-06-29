@@ -10,13 +10,13 @@ const ArtworksDetails = () => {
   const dispatch: AppDispatch = useDispatch()
   const [artwork, setArtwork] = useState<ArtworkDetail>()
   const [error, setError] = useState<Boolean>(false)
-  const { loading } = useSelector(state => state.artworks)
+  const { loading } = useSelector((state: any) => state.artworks)
   const { id } = useParams()
 
   const fetchById = async () => {
     try {
-      const resp = await dispatch(getArtworksById(id))
-      setArtwork(resp.payload.data)
+      const { payload }:any = await dispatch(getArtworksById(Number(id)))
+      setArtwork(payload.data)
       setError(false)
     } catch (error) {
       setError(true)
@@ -74,7 +74,7 @@ const ArtworksDetails = () => {
 
                 <Box sx={{ display: 'flex' }}>
                   <Typography sx={{ fontWeight: 'bold', whiteSpace: 'nowrap' }} marginTop={3}>Artist Display: </Typography>
-                  <Typography marginTop={3} sx={{minWidth: 500}}> {artwork.artist_display}</Typography>
+                  <Typography marginTop={3} sx={{ minWidth: 500 }}> {artwork.artist_display}</Typography>
                 </Box>
 
                 <Box sx={{ display: 'flex' }}>

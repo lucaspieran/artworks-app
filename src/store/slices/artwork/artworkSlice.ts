@@ -37,7 +37,7 @@ export const searchArtworks = createAsyncThunk(
   'artwork/searchArtworks',
   async ({ search, page }: any) => {
     const response = await artworkSearch.get<ArtworksResponse>(`&page=${page}&q=${search}`)
-    return response.data
+    return response.data.data
   }
 )
 
@@ -77,7 +77,7 @@ export const artworkSlice = createSlice({
       state.loading = true
     })
     builder.addCase(searchArtworks.fulfilled, (state, action) => {
-      state.list = action.payload.data
+      state.list = action.payload
       state.loading = false
     })
 

@@ -10,7 +10,7 @@ import { TableArtwork } from '../Table/TableArtwork';
 const Artwork: FC = () => {
   const [page, setPage] = useState<number>(1)
   const [search, setSearch] = useState<String>('')
-  const { list, loading, error } = useSelector((state: artworkState) => state.artworks)
+  const { list, loading, error } = useSelector((state: any) => state.artworks)
   const dispatch: AppDispatch = useDispatch()
 
   const handleChangePage = (
