@@ -21,9 +21,6 @@ make up
 
 Application made to be able to list the different works of art of the Art Institute of Chicago
 
-## View the app
-[ArtworksApp](https://frolicking-lamington-dfb2ce.netlify.app/)
-
 ## Api docs
 
  [ApiDocs](https://api.artic.edu/docs/#introduction)
